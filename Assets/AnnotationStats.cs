@@ -6,57 +6,45 @@ using System;
 [CreateAssetMenu()]
 public class AnnotationStats : ScriptableObject
 {
-    public AnnotationCounter Normal = new AnnotationCounter(AnAnnotationType.Normal);
-    public AnnotationCounter Trash = new AnnotationCounter(AnAnnotationType.Trash);
-    public AnnotationCounter Bike = new AnnotationCounter(AnAnnotationType.Bike);
-    public AnnotationCounter Jaywalker = new AnnotationCounter(AnAnnotationType.Jaywalker);
     public List<SerialzedSequenceData> sequenceDatas = new List<SerialzedSequenceData>();
-
-    public int GetAndAddToCount(AnAnnotationType type)
-    {
-        int count = 0;
-        switch (type)
-        {
-            case AnAnnotationType.Normal:
-                count = Normal.count;
-                Normal.count++;
-                break;
-            case AnAnnotationType.Trash:
-                count = Trash.count;
-                Trash.count++;
-                break;
-            case AnAnnotationType.Bike:
-                count = Bike.count;
-                Bike.count++;
-                break;
-            case AnAnnotationType.Jaywalker:
-                count = Jaywalker.count;
-                Jaywalker.count++;
-                break;
-        }
-        
-        return count;
-    }
+    public int JaywalkerCount = 0;
+    public int BikeOnSidewalkCount = 0;
+    public int BikeOutOfLaneCount = 0;
 
     public void ResetStats()
     {
-        Normal = new AnnotationCounter(AnAnnotationType.Normal);
-        Trash = new AnnotationCounter(AnAnnotationType.Trash);
-        Bike = new AnnotationCounter(AnAnnotationType.Bike);
-        Jaywalker = new AnnotationCounter(AnAnnotationType.Jaywalker);
         sequenceDatas = new List<SerialzedSequenceData>();
-}
-}
+        JaywalkerCount = 0;
+        BikeOnSidewalkCount = 0;
+        BikeOutOfLaneCount = 0;
+    }
 
-[Serializable]
-public class AnnotationCounter
-{
-    public int count;
-    public AnAnnotationType type { private set; get; }
-
-    public AnnotationCounter(AnAnnotationType t)
+    public int GetAndAddToCountOfType(AnAnnotationType type)
     {
-        count = 0;
-        type = t;
+        switch (type)
+        {
+            case AnAnnotationType.Jaywalker:
+                JaywalkerCount++;
+                return JaywalkerCount;
+            case AnAnnotationType.BikeSidewalk:
+                BikeOnSidewalkCount++;
+                return BikeOnSidewalkCount;
+            case AnAnnotationType.BikeOutOfLane:
+                BikeOutOfLaneCount++;
+                return BikeOutOfLaneCount;
+        }
+        return 0;
+    }
+
+    public string GetDataAsCSV()
+    {
+        string dataString = "";
+        for(int i = 0; i < sequenceDatas.Count; i++)
+        {
+            dataString += sequenceDatas[i].Path + "," + sequenceDatas[i].StartFrame + ","
+                + sequenceDatas[i].EndFrame + "," + sequenceDatas[i].AnnotationType;
+            if(i != sequenceDatas.Count - 1) dataString += "\n";
+        }
+        return dataString;
     }
 }

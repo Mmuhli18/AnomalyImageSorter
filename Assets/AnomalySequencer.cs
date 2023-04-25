@@ -14,10 +14,22 @@ public class AnomalySequencer
     int currentIndex = 0;
     [SerializeField]
     string path;
+    [SerializeField]
+    string serializedPath;
 
     public AnomalySequencer(int start, int end, string p)
     {
         path = p;
+        string[] splitpath = path.Split('/');
+        serializedPath = splitpath[splitpath.Length - 2];
+        StartNumber = start;
+        EndNumber = end;
+    }
+
+    public AnomalySequencer(int start, int end, string p, string sp)
+    {
+        path = p;
+        serializedPath = sp;
         StartNumber = start;
         EndNumber = end;
     }
@@ -48,8 +60,7 @@ public class AnomalySequencer
         data.StartFrame = StartNumber;
         data.EndFrame = EndNumber;
         data.AnnotationType = type;
-        string[] splitpath = path.Split('/');
-        data.Path = splitpath[splitpath.Length - 2];
+        data.Path = serializedPath;
         return data;
     }
 }

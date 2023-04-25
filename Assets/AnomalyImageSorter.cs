@@ -18,46 +18,52 @@ public class AnomalyImageSorter : MonoBehaviour
     public Texture2D bad_load;
     public Texture2D done_anno;
     [SerializeField]
-    AnnotationStats stats;
+    protected AnnotationStats stats;
 
     [Header("Visualization")]
     [SerializeField]
-    int activeSequenceIndex = 0;
+    protected int activeSequenceIndex = 0;
     
     [SerializeField]
-    List<AnomalySequencer> anomalySequencers = new List<AnomalySequencer>();
+    protected List<AnomalySequencer> anomalySequencers = new List<AnomalySequencer>();
     
     float timer = 0f;
     bool doneWithSequences = false;
 
-    Texture2D loadingTexture;
-    VisualElement pictureElement;
+    protected Texture2D loadingTexture;
+    protected VisualElement pictureElement;
 
-    AnomalySequencer activeSequence;
+    protected AnomalySequencer activeSequence;
+
+
+    protected string dirPath;
 
 
     void Start()
     {
         UIDoc = GetComponent<UIDocument>();
-        pictureElement = UIDoc.rootVisualElement.Q("image-element");
 
         if (ResetStatsOnStartup) stats.ResetStats();
 
         PictureButton normalButton = new PictureButton(AnAnnotationType.Normal, "bt-normal");
         PictureButton trashButton = new PictureButton(AnAnnotationType.Trash, "bt-trash");
-        PictureButton bikeButton = new PictureButton(AnAnnotationType.Bike, "bt-bike");
+        PictureButton bikeOutOfLaneButton = new PictureButton(AnAnnotationType.BikeOutOfLane, "bt-bike");
+        PictureButton bikeSideWalkButton = new PictureButton(AnAnnotationType.BikeSidewalk, "bt-bike-sidewalk");
         PictureButton jaywalkerButton = new PictureButton(AnAnnotationType.Jaywalker, "bt-jaywalker");
 
         normalButton.onPressedEvent += SortPicture;
         trashButton.onPressedEvent += SortPicture;
-        bikeButton.onPressedEvent += SortPicture;
+        bikeOutOfLaneButton.onPressedEvent += SortPicture;
+        bikeSideWalkButton.onPressedEvent += SortPicture;
         jaywalkerButton.onPressedEvent += SortPicture;
 
         LoadImage(bad_load);
-
         loadingTexture = new Texture2D(bad_load.width, bad_load.height);
+        dirPath = folderPath + "/Sorted/anomalyData_" + DateTime.Now.ToString("yyyy/MM/dd HH.mm.ss") + "/";
+        EnsureFolderExists(dirPath);
+        
 
-        for(int i = 1; i <= 34; i++)
+        for (int i = 1; i <= 34; i++)
         {
             string folderNumber = i.ToString();
             string Os = "";
@@ -78,7 +84,7 @@ public class AnomalyImageSorter : MonoBehaviour
     private void Update()
     {
         
-        if(timer < Time.time && !doneWithSequences)
+        if(timer < Time.time && !doneWithSequences && activeSequence != null)
         {
             LoadImage(activeSequence.GetFromSequence(loadingTexture));
             timer = Time.time + videoPlayrate;
@@ -86,14 +92,17 @@ public class AnomalyImageSorter : MonoBehaviour
         
     }
 
-    void LoadImage(Texture2D texture)
+    protected void LoadImage(Texture2D texture)
     {
+        if (UIDoc == null) UIDoc = GetComponent<UIDocument>();
+        if(pictureElement == null) pictureElement = UIDoc.rootVisualElement.Q("image-element");
         pictureElement.style.backgroundImage = new StyleBackground(texture);
     }
 
-    private void SortPicture(AnAnnotationType type)
+    protected void SortPicture(AnAnnotationType type)
     {
-        stats.sequenceDatas.Add(activeSequence.GetSerialzedData(type));
+        SerialzedSequenceData data = activeSequence.GetSerialzedData(type);
+        stats.sequenceDatas.Add(data);
         activeSequenceIndex++;
         if(activeSequenceIndex == anomalySequencers.Count)
         {
@@ -101,6 +110,54 @@ public class AnomalyImageSorter : MonoBehaviour
             LoadImage(done_anno);
         }
         else activeSequence = anomalySequencers[activeSequenceIndex];
+        SaveDataToCSV();
+
+        if (type == AnAnnotationType.Jaywalker || 
+            type == AnAnnotationType.BikeOutOfLane || 
+            type == AnAnnotationType.BikeSidewalk) 
+                SaveSequenceToJPG(data);
+
+    }
+
+    void SaveDataToCSV()
+    {
+        string FilePath = dirPath + "data.csv";
+        File.WriteAllText(FilePath, stats.GetDataAsCSV());
+    }
+
+    void SaveSequenceToJPG(SerialzedSequenceData sequenceData)
+    {
+        string FilePath = dirPath + sequenceData.AnnotationType.ToString() + "_" + stats.GetAndAddToCountOfType(sequenceData.AnnotationType) + "/";
+        EnsureFolderExists(FilePath);
+        Debug.Log("Writing to path: " + FilePath);
+        for(int i = sequenceData.StartFrame; i <= sequenceData.EndFrame; i++)
+        {
+            //Os
+            string Os = "";
+            for (int j = i.ToString().Length; j < 5; j++)
+            {
+                Os += "0";
+            }
+
+            //FilePath
+            string fileName = Os + i + ".jpg";
+            string targetPath = folderPath + "/" + sequenceData.Path + "/" + fileName;
+            
+
+            //Writing
+            byte[] bytes = File.ReadAllBytes(targetPath);
+            File.WriteAllBytes(FilePath + fileName, bytes);
+        }
+        
+    }
+
+    protected void EnsureFolderExists(string path)
+    {
+        if (!Directory.Exists(path))
+        {
+            if (true) { Debug.Log("Creating directory: " + path); }
+            Directory.CreateDirectory(path);
+        }
     }
 }
 
@@ -173,6 +230,9 @@ public enum AnAnnotationType
 {
     Normal,
     Trash,
-    Bike,
-    Jaywalker
+    BikeOutOfLane,
+    BikeSidewalk,
+    Jaywalker,
+    New,
+    Better
 }
