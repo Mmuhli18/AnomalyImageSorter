@@ -48,7 +48,8 @@ public class AnomalySequencer
         data.StartFrame = StartNumber;
         data.EndFrame = EndNumber;
         data.AnnotationType = type;
-        data.Path = path;
+        string[] splitpath = path.Split('/');
+        data.Path = splitpath[splitpath.Length - 2];
         return data;
     }
 }
