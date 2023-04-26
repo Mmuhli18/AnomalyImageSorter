@@ -400,7 +400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   folderPath: C:/Users/morte/Documents/Test
-  doWriteImages: 0
+  doWriteImages: 1
   firstSortStats: {fileID: 11400000, guid: 4458eaabaaf115a49889055209ac36b3, type: 2}
   specificSortStats: {fileID: 11400000, guid: 7d6105b04e4524f429bdc685f9403169, type: 2}
   includeDupes: 0
