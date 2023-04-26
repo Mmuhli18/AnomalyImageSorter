@@ -19,6 +19,7 @@ public class AnomalyImageSorter : MonoBehaviour
     public Texture2D done_anno;
     [SerializeField]
     protected AnnotationStats stats;
+    protected Action<SerialzedSequenceData> newSequenceEvent;
 
     [Header("Visualization")]
     [SerializeField]
@@ -116,7 +117,7 @@ public class AnomalyImageSorter : MonoBehaviour
             type == AnAnnotationType.BikeOutOfLane || 
             type == AnAnnotationType.BikeSidewalk) 
                 SaveSequenceToJPG(data);
-
+        newSequenceEvent.Invoke(activeSequence.GetSerialzedData(type));
     }
 
     void SaveDataToCSV()
@@ -148,7 +149,6 @@ public class AnomalyImageSorter : MonoBehaviour
             byte[] bytes = File.ReadAllBytes(targetPath);
             File.WriteAllBytes(FilePath + fileName, bytes);
         }
-        
     }
 
     protected void EnsureFolderExists(string path)
@@ -234,5 +234,6 @@ public enum AnAnnotationType
     BikeSidewalk,
     Jaywalker,
     New,
-    Better
+    Better,
+    Worse
 }

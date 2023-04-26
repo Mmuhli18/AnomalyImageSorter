@@ -2,12 +2,15 @@
     <Style src="project://database/Assets/style.uss?fileID=7433441132597879392&amp;guid=5d1bd6fc3809e4f458a9d6f59065207e&amp;type=3#style" />
     <ui:VisualElement style="flex-grow: 1; background-color: rgb(56, 56, 56);">
         <ui:VisualElement style="flex-grow: 1; height: 70%; padding-left: 3%; padding-right: 3%; padding-top: 3%; padding-bottom: 3%; border-bottom-color: rgb(102, 102, 102); border-left-color: rgb(102, 102, 102); border-right-color: rgb(102, 102, 102); border-top-color: rgb(102, 102, 102); border-bottom-width: 3px;">
-            <ui:VisualElement name="image-element" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/RenderOutput/loading_sleepy.png?fileID=2800000&amp;guid=7d2e8dbcabbab4a458dbdf6a26aa99aa&amp;type=3#loading_sleepy&apos;);" />
+            <ui:VisualElement name="image-element" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/RenderOutput/loading_sleepy.png?fileID=2800000&amp;guid=7d2e8dbcabbab4a458dbdf6a26aa99aa&amp;type=3#loading_sleepy&apos;);">
+                <ui:Label text="POSSIBLE DUPLICATE DETECTED" display-tooltip-when-elided="true" name="l-dupe" style="color: rgb(255, 0, 0); font-size: 20px; flex-grow: 1;" />
+            </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="h-buttons" style="flex-grow: 1; flex-direction: row; margin-left: 3%; margin-right: 3%; margin-top: 3%; margin-bottom: 3%; justify-content: center; align-items: stretch;">
-            <ui:Button text="Better Version of Last" display-tooltip-when-elided="true" name="bt-better" />
+            <ui:Button text="Go Back" display-tooltip-when-elided="true" name="bt-back" />
             <ui:Button text="Brand New" display-tooltip-when-elided="true" name="bt-new" />
-            <ui:Button text="Trash" display-tooltip-when-elided="true" name="bt-trash" />
+            <ui:Button text="Better Version of Last" display-tooltip-when-elided="true" name="bt-better" />
+            <ui:Button text="Worse Version of Last" display-tooltip-when-elided="true" name="bt-worse" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

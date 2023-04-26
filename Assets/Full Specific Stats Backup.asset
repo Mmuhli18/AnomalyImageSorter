@@ -1,0 +1,506 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04461ac393685284fadc7ace351f3fac, type: 3}
+  m_Name: Full Specific Stats Backup
+  m_EditorClassIdentifier: 
+  sequenceDatas:
+  - StartFrame: 2719
+    EndFrame: 2765
+    AnnotationType: 5
+    Path: BikeOutOfLane_01
+  - StartFrame: 2790
+    EndFrame: 2881
+    AnnotationType: 5
+    Path: BikeOutOfLane_02
+  - StartFrame: 1334
+    EndFrame: 1356
+    AnnotationType: 5
+    Path: BikeOutOfLane_03
+  - StartFrame: 1366
+    EndFrame: 1378
+    AnnotationType: 5
+    Path: BikeOutOfLane_04
+  - StartFrame: 1581
+    EndFrame: 1661
+    AnnotationType: 5
+    Path: BikeOutOfLane_05
+  - StartFrame: 4075
+    EndFrame: 4126
+    AnnotationType: 5
+    Path: BikeOutOfLane_06
+  - StartFrame: 3830
+    EndFrame: 3878
+    AnnotationType: 5
+    Path: BikeOutOfLane_07
+  - StartFrame: 1888
+    EndFrame: 1933
+    AnnotationType: 5
+    Path: BikeOutOfLane_08
+  - StartFrame: 2153
+    EndFrame: 2197
+    AnnotationType: 5
+    Path: BikeOutOfLane_09
+  - StartFrame: 3044
+    EndFrame: 3058
+    AnnotationType: 5
+    Path: BikeOutOfLane_10
+  - StartFrame: 3172
+    EndFrame: 3409
+    AnnotationType: 5
+    Path: BikeOutOfLane_11
+  - StartFrame: 3249
+    EndFrame: 3268
+    AnnotationType: 6
+    Path: BikeOutOfLane_12
+  - StartFrame: 3282
+    EndFrame: 3336
+    AnnotationType: 5
+    Path: BikeOutOfLane_13
+  - StartFrame: 4132
+    EndFrame: 4212
+    AnnotationType: 5
+    Path: BikeOutOfLane_14
+  - StartFrame: 4348
+    EndFrame: 4368
+    AnnotationType: 5
+    Path: BikeOutOfLane_15
+  - StartFrame: 349
+    EndFrame: 370
+    AnnotationType: 5
+    Path: BikeOutOfLane_16
+  - StartFrame: 4304
+    EndFrame: 4391
+    AnnotationType: 5
+    Path: BikeOutOfLane_17
+  - StartFrame: 293
+    EndFrame: 316
+    AnnotationType: 5
+    Path: BikeOutOfLane_18
+  - StartFrame: 334
+    EndFrame: 390
+    AnnotationType: 5
+    Path: BikeOutOfLane_19
+  - StartFrame: 458
+    EndFrame: 478
+    AnnotationType: 5
+    Path: BikeOutOfLane_20
+  - StartFrame: 1310
+    EndFrame: 1552
+    AnnotationType: 5
+    Path: BikeOutOfLane_21
+  - StartFrame: 1385
+    EndFrame: 1497
+    AnnotationType: 6
+    Path: BikeOutOfLane_22
+  - StartFrame: 1544
+    EndFrame: 1555
+    AnnotationType: 5
+    Path: BikeOutOfLane_23
+  - StartFrame: 3297
+    EndFrame: 3326
+    AnnotationType: 5
+    Path: BikeOutOfLane_24
+  - StartFrame: 4497
+    EndFrame: 4756
+    AnnotationType: 5
+    Path: BikeOutOfLane_25
+  - StartFrame: 4534
+    EndFrame: 4546
+    AnnotationType: 6
+    Path: BikeOutOfLane_26
+  - StartFrame: 4559
+    EndFrame: 4571
+    AnnotationType: 5
+    Path: BikeOutOfLane_27
+  - StartFrame: 900
+    EndFrame: 958
+    AnnotationType: 5
+    Path: BikeOutOfLane_28
+  - StartFrame: 2375
+    EndFrame: 2443
+    AnnotationType: 5
+    Path: BikeOutOfLane_29
+  - StartFrame: 2478
+    EndFrame: 2570
+    AnnotationType: 5
+    Path: BikeOutOfLane_30
+  - StartFrame: 2660
+    EndFrame: 2694
+    AnnotationType: 5
+    Path: BikeOutOfLane_31
+  - StartFrame: 2856
+    EndFrame: 2930
+    AnnotationType: 5
+    Path: BikeOutOfLane_32
+  - StartFrame: 3703
+    EndFrame: 3748
+    AnnotationType: 5
+    Path: BikeOutOfLane_33
+  - StartFrame: 2588
+    EndFrame: 2614
+    AnnotationType: 5
+    Path: BikeOutOfLane_34
+  - StartFrame: 3949
+    EndFrame: 4002
+    AnnotationType: 5
+    Path: BikeOutOfLane_35
+  - StartFrame: 1568
+    EndFrame: 1657
+    AnnotationType: 5
+    Path: BikeOutOfLane_36
+  - StartFrame: 2588
+    EndFrame: 2606
+    AnnotationType: 5
+    Path: BikeOutOfLane_37
+  - StartFrame: 3694
+    EndFrame: 3763
+    AnnotationType: 5
+    Path: BikeOutOfLane_38
+  - StartFrame: 3832
+    EndFrame: 4170
+    AnnotationType: 5
+    Path: BikeOutOfLane_39
+  - StartFrame: 3982
+    EndFrame: 4017
+    AnnotationType: 7
+    Path: BikeOutOfLane_40
+  - StartFrame: 762
+    EndFrame: 795
+    AnnotationType: 5
+    Path: BikeOutOfLane_41
+  - StartFrame: 861
+    EndFrame: 887
+    AnnotationType: 5
+    Path: BikeOutOfLane_42
+  - StartFrame: 1588
+    EndFrame: 1604
+    AnnotationType: 5
+    Path: BikeOutOfLane_43
+  - StartFrame: 946
+    EndFrame: 1011
+    AnnotationType: 5
+    Path: BikeOutOfLane_44
+  - StartFrame: 4039
+    EndFrame: 4170
+    AnnotationType: 5
+    Path: BikeSidewalk_1
+  - StartFrame: 3153
+    EndFrame: 3277
+    AnnotationType: 5
+    Path: BikeSidewalk_2
+  - StartFrame: 1561
+    EndFrame: 1717
+    AnnotationType: 5
+    Path: BikeSidewalk_3
+  - StartFrame: 1570
+    EndFrame: 1714
+    AnnotationType: 6
+    Path: BikeSidewalk_4
+  - StartFrame: 4233
+    EndFrame: 4375
+    AnnotationType: 5
+    Path: BikeSidewalk_5
+  - StartFrame: 3704
+    EndFrame: 3826
+    AnnotationType: 5
+    Path: BikeSidewalk_6
+  - StartFrame: 4087
+    EndFrame: 4285
+    AnnotationType: 5
+    Path: BikeSidewalk_7
+  - StartFrame: 2108
+    EndFrame: 2191
+    AnnotationType: 5
+    Path: Jaywalker_01
+  - StartFrame: 2170
+    EndFrame: 3498
+    AnnotationType: 5
+    Path: Jaywalker_02
+  - StartFrame: 2287
+    EndFrame: 2615
+    AnnotationType: 6
+    Path: Jaywalker_03
+  - StartFrame: 3226
+    EndFrame: 3362
+    AnnotationType: 5
+    Path: Jaywalker_04
+  - StartFrame: 3227
+    EndFrame: 3357
+    AnnotationType: 6
+    Path: Jaywalker_05
+  - StartFrame: 1
+    EndFrame: 70
+    AnnotationType: 5
+    Path: Jaywalker_06
+  - StartFrame: 97
+    EndFrame: 113
+    AnnotationType: 5
+    Path: Jaywalker_07
+  - StartFrame: 4378
+    EndFrame: 4523
+    AnnotationType: 5
+    Path: Jaywalker_08
+  - StartFrame: 918
+    EndFrame: 981
+    AnnotationType: 5
+    Path: Jaywalker_09
+  - StartFrame: 979
+    EndFrame: 1005
+    AnnotationType: 7
+    Path: Jaywalker_10
+  - StartFrame: 4681
+    EndFrame: 4746
+    AnnotationType: 5
+    Path: Jaywalker_11
+  - StartFrame: 4781
+    EndFrame: 4859
+    AnnotationType: 5
+    Path: Jaywalker_12
+  - StartFrame: 774
+    EndFrame: 922
+    AnnotationType: 5
+    Path: Jaywalker_13
+  - StartFrame: 1662
+    EndFrame: 1880
+    AnnotationType: 5
+    Path: Jaywalker_14
+  - StartFrame: 2279
+    EndFrame: 2450
+    AnnotationType: 5
+    Path: Jaywalker_15
+  - StartFrame: 2891
+    EndFrame: 3323
+    AnnotationType: 5
+    Path: Jaywalker_16
+  - StartFrame: 2891
+    EndFrame: 3153
+    AnnotationType: 7
+    Path: Jaywalker_17
+  - StartFrame: 2903
+    EndFrame: 3165
+    AnnotationType: 7
+    Path: Jaywalker_18
+  - StartFrame: 2939
+    EndFrame: 3119
+    AnnotationType: 7
+    Path: Jaywalker_19
+  - StartFrame: 3093
+    EndFrame: 3259
+    AnnotationType: 6
+    Path: Jaywalker_20
+  - StartFrame: 2898
+    EndFrame: 3111
+    AnnotationType: 5
+    Path: Jaywalker_21
+  - StartFrame: 42
+    EndFrame: 231
+    AnnotationType: 5
+    Path: Jaywalker_22
+  - StartFrame: 3462
+    EndFrame: 3582
+    AnnotationType: 5
+    Path: Jaywalker_23
+  - StartFrame: 3688
+    EndFrame: 3892
+    AnnotationType: 5
+    Path: Jaywalker_24
+  - StartFrame: 2525
+    EndFrame: 2691
+    AnnotationType: 5
+    Path: Jaywalker_25
+  - StartFrame: 3187
+    EndFrame: 3293
+    AnnotationType: 5
+    Path: Jaywalker_26
+  - StartFrame: 3327
+    EndFrame: 3369
+    AnnotationType: 5
+    Path: Jaywalker_27
+  - StartFrame: 2842
+    EndFrame: 3060
+    AnnotationType: 5
+    Path: Jaywalker_28
+  - StartFrame: 3345
+    EndFrame: 3580
+    AnnotationType: 5
+    Path: Jaywalker_29
+  - StartFrame: 3513
+    EndFrame: 3597
+    AnnotationType: 6
+    Path: Jaywalker_30
+  - StartFrame: 4411
+    EndFrame: 4521
+    AnnotationType: 5
+    Path: Jaywalker_31
+  - StartFrame: 986
+    EndFrame: 1166
+    AnnotationType: 5
+    Path: Jaywalker_32
+  - StartFrame: 1
+    EndFrame: 264
+    AnnotationType: 5
+    Path: Jaywalker_33
+  - StartFrame: 144
+    EndFrame: 187
+    AnnotationType: 6
+    Path: Jaywalker_34
+  - StartFrame: 1928
+    EndFrame: 2403
+    AnnotationType: 5
+    Path: Jaywalker_35
+  - StartFrame: 2246
+    EndFrame: 2408
+    AnnotationType: 6
+    Path: Jaywalker_36
+  - StartFrame: 2442
+    EndFrame: 2518
+    AnnotationType: 5
+    Path: Jaywalker_37
+  - StartFrame: 2951
+    EndFrame: 3311
+    AnnotationType: 5
+    Path: Jaywalker_38
+  - StartFrame: 2995
+    EndFrame: 3160
+    AnnotationType: 6
+    Path: Jaywalker_39
+  - StartFrame: 2734
+    EndFrame: 2813
+    AnnotationType: 5
+    Path: Jaywalker_40
+  - StartFrame: 2832
+    EndFrame: 2859
+    AnnotationType: 5
+    Path: Jaywalker_41
+  - StartFrame: 4435
+    EndFrame: 4570
+    AnnotationType: 5
+    Path: Jaywalker_42
+  - StartFrame: 3103
+    EndFrame: 3320
+    AnnotationType: 5
+    Path: Jaywalker_43
+  - StartFrame: 4637
+    EndFrame: 4783
+    AnnotationType: 5
+    Path: Jaywalker_44
+  - StartFrame: 4750
+    EndFrame: 4797
+    AnnotationType: 5
+    Path: Jaywalker_45
+  - StartFrame: 1536
+    EndFrame: 1911
+    AnnotationType: 5
+    Path: Jaywalker_46
+  - StartFrame: 1597
+    EndFrame: 1796
+    AnnotationType: 6
+    Path: Jaywalker_47
+  - StartFrame: 229
+    EndFrame: 344
+    AnnotationType: 5
+    Path: Jaywalker_48
+  - StartFrame: 373
+    EndFrame: 584
+    AnnotationType: 5
+    Path: Jaywalker_49
+  - StartFrame: 382
+    EndFrame: 557
+    AnnotationType: 6
+    Path: Jaywalker_50
+  - StartFrame: 1957
+    EndFrame: 2073
+    AnnotationType: 5
+    Path: Jaywalker_51
+  - StartFrame: 1966
+    EndFrame: 2066
+    AnnotationType: 6
+    Path: Jaywalker_52
+  - StartFrame: 836
+    EndFrame: 1010
+    AnnotationType: 5
+    Path: Jaywalker_53
+  - StartFrame: 1013
+    EndFrame: 1201
+    AnnotationType: 5
+    Path: Jaywalker_54
+  - StartFrame: 949
+    EndFrame: 1027
+    AnnotationType: 5
+    Path: Jaywalker_55
+  - StartFrame: 2128
+    EndFrame: 2318
+    AnnotationType: 5
+    Path: Jaywalker_56
+  - StartFrame: 2193
+    EndFrame: 2282
+    AnnotationType: 5
+    Path: Jaywalker_57
+  - StartFrame: 2278
+    EndFrame: 2423
+    AnnotationType: 5
+    Path: Jaywalker_58
+  - StartFrame: 878
+    EndFrame: 1033
+    AnnotationType: 5
+    Path: Jaywalker_59
+  - StartFrame: 1816
+    EndFrame: 2060
+    AnnotationType: 5
+    Path: Jaywalker_60
+  - StartFrame: 1974
+    EndFrame: 2210
+    AnnotationType: 6
+    Path: Jaywalker_61
+  - StartFrame: 3639
+    EndFrame: 3775
+    AnnotationType: 5
+    Path: Jaywalker_62
+  - StartFrame: 2572
+    EndFrame: 2859
+    AnnotationType: 5
+    Path: Jaywalker_63
+  - StartFrame: 620
+    EndFrame: 5175
+    AnnotationType: 5
+    Path: Jaywalker_64
+  - StartFrame: 900
+    EndFrame: 1172
+    AnnotationType: 6
+    Path: Jaywalker_65
+  - StartFrame: 1
+    EndFrame: 2999
+    AnnotationType: 5
+    Path: Jaywalker_66
+  - StartFrame: 105
+    EndFrame: 407
+    AnnotationType: 6
+    Path: Jaywalker_67
+  - StartFrame: 356
+    EndFrame: 384
+    AnnotationType: 5
+    Path: Jaywalker_68
+  - StartFrame: 1
+    EndFrame: 2519
+    AnnotationType: 5
+    Path: Jaywalker_69
+  - StartFrame: 250
+    EndFrame: 377
+    AnnotationType: 6
+    Path: Jaywalker_70
+  - StartFrame: 810
+    EndFrame: 990
+    AnnotationType: 5
+    Path: Jaywalker_71
+  JaywalkerCount: 0
+  BikeOnSidewalkCount: 0
+  BikeOutOfLaneCount: 0
