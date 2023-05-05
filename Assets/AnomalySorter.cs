@@ -38,6 +38,9 @@ public class AnomalySorter : MonoBehaviour
     [Header("Normal Sorting")]
     public List<DataFolder> dataFolders = new List<DataFolder>();
     public int Normal_FolderFileIndex = 1;
+    [Min(1)]
+    public int StartFolder = 1;
+    int forbiddenFileInFolderCount = 0;
 
     private void Start()
     {
@@ -89,7 +92,7 @@ public class AnomalySorter : MonoBehaviour
         EnsureFolderExists(dirPath);
 
         List<string> folderNames = new List<string>();
-        for(int i = 1; i < 35; i++)
+        for(int i = StartFolder; i < 35; i++)
         {
             string folder = "Test";
             if (i < 10) folder += "0";
@@ -201,12 +204,20 @@ public class AnomalySorter : MonoBehaviour
                 byte[] bytes = File.ReadAllBytes(targetPath);
                 File.WriteAllBytes(dirPath + "/" + folder.name + "/" + fileName, bytes);
             }
+            else forbiddenFileInFolderCount++;
             Normal_FolderFileIndex++;
             if (Normal_FolderFileIndex % 500 == 0) Debug.Log("Copying images: " + Normal_FolderFileIndex + "/" + folder.lastFile);
         }
         else
         {
+            Debug.Log("Finshed folder " + dataFolders[dataWriteCount].name + " with " + forbiddenFileInFolderCount + " files ignored");
+            forbiddenFileInFolderCount = 0;
             dataWriteCount++;
+            if (dataWriteCount >= dataFolders.Count)
+            {
+                Debug.Log("Finished Copying elements");
+                return;
+            }
             Normal_FolderFileIndex = dataFolders[dataWriteCount].firstFile;
             EnsureFolderExists(dirPath + "/" + dataFolders[dataWriteCount].name);
             Debug.Log("Writing data folder: " + (dataWriteCount + 1) + "/" + dataFolders.Count);
